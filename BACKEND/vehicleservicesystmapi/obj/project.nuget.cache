@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "EZxCMtOSmYs=",
+  "dgSpecHash": "5e2BxdptYJQ=",
   "success": true,
-  "projectFilePath": "C:\\Tech Mahindra\\Capstone\\FRONTEND\\vehicleservicesystmapi\\vehicleservicesystmapi.csproj",
+  "projectFilePath": "C:\\Tech Mahindra\\Capstone\\BACKEND\\vehicleservicesystmapi\\vehicleservicesystmapi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Asus\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

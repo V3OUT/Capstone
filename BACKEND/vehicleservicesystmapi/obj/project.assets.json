@@ -2891,11 +2891,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Tech Mahindra\\Capstone\\FRONTEND\\vehicleservicesystmapi\\vehicleservicesystmapi.csproj",
+      "projectUniqueName": "C:\\Tech Mahindra\\Capstone\\BACKEND\\vehicleservicesystmapi\\vehicleservicesystmapi.csproj",
       "projectName": "vehicleservicesystmapi",
-      "projectPath": "C:\\Tech Mahindra\\Capstone\\FRONTEND\\vehicleservicesystmapi\\vehicleservicesystmapi.csproj",
+      "projectPath": "C:\\Tech Mahindra\\Capstone\\BACKEND\\vehicleservicesystmapi\\vehicleservicesystmapi.csproj",
       "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-      "outputPath": "C:\\Tech Mahindra\\Capstone\\FRONTEND\\vehicleservicesystmapi\\obj\\",
+      "outputPath": "C:\\Tech Mahindra\\Capstone\\BACKEND\\vehicleservicesystmapi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
