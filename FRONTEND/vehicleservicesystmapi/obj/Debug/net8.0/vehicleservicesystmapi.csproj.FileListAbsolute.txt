@@ -1,0 +1,7 @@
+C:\Users\Asus\source\repos\vehicleservicesystmapi\obj\Debug\net8.0\vehicleservicesystmapi.csproj.AssemblyReference.cache
+C:\Users\Asus\source\repos\vehicleservicesystmapi\obj\Debug\net8.0\vehicleservicesystmapi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Asus\source\repos\vehicleservicesystmapi\obj\Debug\net8.0\vehicleservicesystmapi.AssemblyInfoInputs.cache
+C:\Users\Asus\source\repos\vehicleservicesystmapi\obj\Debug\net8.0\vehicleservicesystmapi.AssemblyInfo.cs
+C:\Users\Asus\source\repos\vehicleservicesystmapi\obj\Debug\net8.0\vehicleservicesystmapi.csproj.CoreCompileInputs.cache
+C:\Users\Asus\source\repos\vehicleservicesystmapi\obj\Debug\net8.0\vehicleservicesystmapi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Asus\source\repos\vehicleservicesystmapi\obj\Debug\net8.0\vehicleservicesystmapi.MvcApplicationPartsAssemblyInfo.cache
