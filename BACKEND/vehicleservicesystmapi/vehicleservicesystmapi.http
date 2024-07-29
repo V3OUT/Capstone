@@ -1,6 +1,0 @@
-@vehicleservicesystmapi_HostAddress = http://localhost:5208
-
-GET {{vehicleservicesystmapi_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
