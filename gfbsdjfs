@@ -1,0 +1,100 @@
+[33mcommit 9b94a7d79442dd95fa9929105e0598282354bbad[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: yatharth <yatharthvaish@gmail.com>
+Date:   Tue Jul 30 05:23:13 2024 +0530
+
+    Backend CRUD completed
+
+[33mcommit aab2d9059c54e8f2c253a997fa7f55c0151a3fbe[m
+Author: yatharth <yatharthvaish@gmail.com>
+Date:   Tue Jul 30 05:19:06 2024 +0530
+
+    Track large files with Git LFS
+
+[33mcommit 2f4c6b898a8d871562f0e9d5ac9b7bece545321c[m
+Merge: ec220d2 f10dd25
+Author: yatharth <yatharthvaish@gmail.com>
+Date:   Tue Jul 30 05:04:51 2024 +0530
+
+    Resolved merge conflicts by accepting deletions from remote
+
+[33mcommit ec220d20c1d6359a779447eab477ea4bd726349e[m
+Author: yatharth <yatharthvaish@gmail.com>
+Date:   Tue Jul 30 05:00:16 2024 +0530
+
+    Backend CRUD completed
+
+[33mcommit f10dd25211d006ff1f52b9bc33732fddf11a3298[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: Yatharth Vaish <yatharthvaish@gmail.com>
+Date:   Tue Jul 30 04:56:39 2024 +0530
+
+    Delete BACKEND/vehicleservicesystmapi directory
+
+[33mcommit 1e3b5250ff1e61c6fd81d12e8dcc8378e3d91f8f[m
+Author: yatharth <yatharthvaish@gmail.com>
+Date:   Fri Jul 26 15:55:54 2024 +0530
+
+    api complete
+
+[33mcommit b88f739f3be60db5e96a5a48fc82fa538000228f[m
+Author: yatharth <yatharthvaish@gmail.com>
+Date:   Fri Jul 26 15:53:42 2024 +0530
+
+    api complete
+
+[33mcommit 2d6ac3b8442d85f7fa3fb86526b8137d4444c116[m
+Merge: daef106 dbd1b48
+Author: yatharth <yatharthvaish@gmail.com>
+Date:   Thu Jul 25 12:50:32 2024 +0530
+
+    Merge branch 'main' of https://github.com/V3OUT/Capstone
+    Merge branch 'main' of https://github.com/V3OUT/Capstone
+    
+    Resolved conflicts and integrated changes from the remote 'main' branch.
+
+[33mcommit daef1060d3cb4b2c4e4851a5e8b8f73fcb5039f5[m
+Author: yatharth <yatharthvaish@gmail.com>
+Date:   Thu Jul 25 12:46:02 2024 +0530
+
+    fe
+
+[33mcommit dbd1b48bec53551a0999b6da6d3b9d87159155d5[m
+Author: Yatharth Vaish <yatharthvaish@gmail.com>
+Date:   Thu Jul 25 12:44:25 2024 +0530
+
+    Create R
+
+[33mcommit aa2dd92174ae2fbf01d53ca6331d500d5a445a2a[m
+Author: Yatharth Vaish <yatharthvaish@gmail.com>
+Date:   Thu Jul 25 12:43:42 2024 +0530
+
+    Delete FORNTEND directory
+
+[33mcommit bd7dacb751f5da2f6daadeb39932e9ca95c89f0d[m
+Author: yatharth <yatharthvaish@gmail.com>
+Date:   Wed Jul 24 13:15:20 2024 +0530
+
+    some fe
+
+[33mcommit 9a377448b85d32d8018a1931ad508e3f783d5006[m
+Author: yatharth <yatharthvaish@gmail.com>
+Date:   Wed Jul 24 12:54:13 2024 +0530
+
+    started
+
+[33mcommit f6f9da6d1b3136d5b8ea90c8c5f55a9956edb0dc[m
+Author: yatharth <yatharthvaish@gmail.com>
+Date:   Wed Jul 24 12:50:25 2024 +0530
+
+    work started
+
+[33mcommit 70aee6b3c55935e3353438ca8fd353c438e03d0c[m
+Author: yatharth <yatharthvaish@gmail.com>
+Date:   Tue Jul 9 20:25:06 2024 +0530
+
+    started backend
+
+[33mcommit 1b7e37d49457714926e336e6922f497b002091da[m
+Author: yatharth <yatharthvaish@gmail.com>
+Date:   Tue Jul 9 20:20:40 2024 +0530
+
+    started
