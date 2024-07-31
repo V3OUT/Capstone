@@ -1,22 +1,23 @@
-<h1>Welcome!</h1>
-<h3>Please Login Yourself</h3>
+<div class="container login-container">
+  <h1 class="text-center">Welcome!</h1>
+  <h3 class="text-center">Please Login Yourself</h3>
 
-
-
-<form #loginForm="ngForm" (ngSubmit)="onLoginFormSubmit(loginForm)">
-    <div>
-      <label for="username">Username</label>
-      <input type="text" id="username" name="username" ngModel required>
+  <form #loginForm="ngForm" (ngSubmit)="onLoginFormSubmit(loginForm)" class="login-form">
+    <div class="mb-3">
+      <label for="username" class="form-label">Username</label>
+      <input type="text" id="username" name="username" ngModel class="form-control" required>
     </div>
-    <div>
-      <label for="password">Password</label>
-      <input type="password" id="password" name="password" ngModel required>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" id="password" name="password" ngModel class="form-control" required>
     </div>
-    <button type="submit">Login</button>
+    <button type="submit" class="btn btn-primary w-100">Login</button>
   </form>
-  <p>{{msg}}</p>
+  
+  <p class="text-center mt-3">{{msg}}</p>
 
-<div>
-    <p>Didnot have account?</p>
-    <button routerLink="/signup" > Create Account</button>
+  <div class="text-center mt-3">
+    <p>Don't have an account?</p>
+    <button routerLink="/signup" class="btn btn-link">Create Account</button>
+  </div>
 </div>

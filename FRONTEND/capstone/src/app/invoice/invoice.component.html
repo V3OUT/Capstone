@@ -1,1 +1,51 @@
-
+<div class="container mt-4">
+    <h2>Invoices</h2>
+  
+    <!-- Table for Displaying Invoices -->
+    <table class="table table-striped mt-3">
+      <thead>
+        <tr>
+          <th>Invoice ID</th>
+          <th>Service Record ID</th>
+          <th>Invoice Date</th>
+          <th>Total Cost</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let invoice of invoices">
+          <td>{{ invoice.invoiceID }}</td>
+          <td>{{ invoice.serviceRecordID }}</td>
+          <td>{{ invoice.invoiceDate | date }}</td>
+          <td>{{ invoice.totalCost }}</td>
+          <td>
+            <button class="btn btn-info btn-sm" (click)="viewInvoice(invoice)">View</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- Invoice Details Modal -->
+    <div *ngIf="currentInvoice" class="modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Invoice Details</h5>
+            <button type="button" class="close" (click)="closeInvoiceView()" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p><strong>Invoice ID:</strong> {{ currentInvoice.invoiceID }}</p>
+            <p><strong>Service Record ID:</strong> {{ currentInvoice.serviceRecordID }}</p>
+            <p><strong>Invoice Date:</strong> {{ currentInvoice.invoiceDate | date }}</p>
+            <p><strong>Total Cost:</strong> {{ currentInvoice.totalCost }}</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" (click)="closeInvoiceView()">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

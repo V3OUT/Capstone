@@ -1,29 +1,38 @@
-<div class="container">
-  <h2>Manage Vehicles</h2>
+<div class="container mt-4">
+  <h2 class="text-center mb-4">Manage Vehicles</h2>
 
-  <form #vehicleForm="ngForm" (ngSubmit)="isUpdating ? updateVehicle(vehicleForm) : addVehicle(vehicleForm)">
-    <div class="form-group">
-      <label for="make">Make:</label>
-      <input type="text" id="make" name="make" ngModel required>
-    </div>
-    <div class="form-group">
-      <label for="model">Model:</label>
-      <input type="text" id="model" name="model" ngModel required>
-    </div>
-    <div class="form-group">
-      <label for="year">Year:</label>
-      <input type="number" id="year" name="year" ngModel required>
-    </div>
-    <div class="form-group">
-      <label for="customerID">Customer ID:</label>
-      <select id="customerID" name="customerID" ngModel required>
-        <option *ngFor="let customer of customers" [value]="customer.customerID">{{ customer.name }}</option>
-      </select>
-    </div>
-    <button type="submit" class="btn btn-primary">{{ isUpdating ? 'Update' : 'Add' }} Vehicle</button>
-  </form>
+  <!-- Button to Toggle Add Vehicle Form -->
+  <button (click)="toggleAddVehicleForm()" class="btn btn-primary mb-3">
+    {{ isAddVehicleFormVisible ? 'Hide Form' : 'Add Vehicle' }}
+  </button>
 
-  <div *ngIf="selectedVehicle">
+  <!-- Add Vehicle Form -->
+  <div [ngClass]="{'d-block': isAddVehicleFormVisible, 'd-none': !isAddVehicleFormVisible}" class="fade-in">
+    <form #vehicleForm="ngForm" (ngSubmit)="isUpdating ? updateVehicle(vehicleForm) : addVehicle(vehicleForm)" class="form-horizontal">
+      <div class="form-group">
+        <label for="make" class="form-label">Make:</label>
+        <input type="text" id="make" name="make" ngModel class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="model" class="form-label">Model:</label>
+        <input type="text" id="model" name="model" ngModel class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="year" class="form-label">Year:</label>
+        <input type="number" id="year" name="year" ngModel class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="customerID" class="form-label">Customer ID:</label>
+        <select id="customerID" name="customerID" ngModel class="form-control" required>
+          <option *ngFor="let customer of customers" [value]="customer.customerID">{{ customer.name }}</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">{{ isUpdating ? 'Update' : 'Add' }} Vehicle</button>
+    </form>
+  </div>
+
+  <!-- Vehicle Details -->
+  <div *ngIf="selectedVehicle" class="mt-4">
     <h3>Vehicle Details</h3>
     <p><strong>Make:</strong> {{ selectedVehicle.make }}</p>
     <p><strong>Model:</strong> {{ selectedVehicle.model }}</p>
@@ -32,12 +41,15 @@
     <button (click)="clearDetails()" class="btn btn-secondary">Clear</button>
   </div>
 
-  <h3>Vehicle List</h3>
+  <!-- Vehicle List -->
+  <h3 class="mt-4">Vehicle List</h3>
   <ul class="list-group">
-    <li *ngFor="let vehicle of vehiclesMap.values()" class="list-group-item">
+    <li *ngFor="let vehicle of vehiclesMap.values()" class="list-group-item d-flex justify-content-between align-items-center">
       {{ vehicle.make }} {{ vehicle.model }} ({{ vehicle.year }})
-      <button (click)="showDetails(vehicle.modelId)" class="btn btn-info btn-sm">Details</button>
-      <button (click)="deleteVehicle(vehicle.modelId)" class="btn btn-danger btn-sm">Delete</button>
+      <div>
+        <button (click)="showDetails(vehicle.modelId)" class="btn btn-info btn-sm me-2">Details</button>
+        <button (click)="deleteVehicle(vehicle.modelId)" class="btn btn-danger btn-sm">Delete</button>
+      </div>
     </li>
   </ul>
 </div>

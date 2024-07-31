@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BillOfMaterialsComponent } from './bill-of-materials/bill-of-materials.component';
 import { InvoicesComponent } from './invoice/invoice.component';
 import { WorkitemsComponent } from './workitems/workitems.component';
+import { LogoutComponent } from './logout/logout.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +30,8 @@ import { WorkitemsComponent } from './workitems/workitems.component';
     AdvisorDashboardComponent,
     BillOfMaterialsComponent,
     InvoicesComponent,
-    WorkitemsComponent
+    WorkitemsComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

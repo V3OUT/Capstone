@@ -1,38 +1,71 @@
-<div class="customer-list">
-  <h2>Customers</h2>
-  <ul>
-    <li *ngFor="let customer of customers" (click)="selectCustomer(customer)">
-      {{ customer.name }} - {{ customer.contactNumber }}
-      <button (click)="deleteCustomer(customer.customerID); $event.stopPropagation()">Delete</button>
-    </li>
-  </ul>
-</div>
+<div class="container mt-4">
+  <h2 class="text-center mb-4">Customers</h2>
 
-<div class="customer-detail" *ngIf="selectedCustomer">
-  <h2>Edit Customer</h2>
-  <label>Name:
-    <input [(ngModel)]="selectedCustomer.name">
-  </label>
-  <label>Address:
-    <input [(ngModel)]="selectedCustomer.address">
-  </label>
-  <label>Contact Number:
-    <input [(ngModel)]="selectedCustomer.contactNumber">
-  </label>
-  <button (click)="updateCustomer()">Update</button>
-  <button (click)="clearSelection()">Cancel</button>
-</div>
+  <!-- Button to Toggle Add Customer Form -->
+  <button (click)="toggleAddCustomerForm()" class="btn btn-primary mb-3">
+    {{ isAddCustomerFormVisible ? 'Hide Add Customer Form' : 'Add New Customer' }}
+  </button>
 
-<div class="customer-create">
-  <h2>Add New Customer</h2>
-  <label>Name:
-    <input [(ngModel)]="newCustomer.name">
-  </label>
-  <label>Address:
-    <input [(ngModel)]="newCustomer.address">
-  </label>
-  <label>Contact Number:
-    <input [(ngModel)]="newCustomer.contactNumber">
-  </label>
-  <button (click)="createCustomer()">Add</button>
+  <!-- Add New Customer Form -->
+  <div [ngClass]="{'d-block': isAddCustomerFormVisible, 'd-none': !isAddCustomerFormVisible}" class="fade-in">
+    <h2>Add New Customer</h2>
+    <div class="mb-3">
+      <label for="newCustomerName" class="form-label">Name:</label>
+      <input id="newCustomerName" [(ngModel)]="newCustomer.name" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label for="newCustomerAddress" class="form-label">Address:</label>
+      <input id="newCustomerAddress" [(ngModel)]="newCustomer.address" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label for="newCustomerContact" class="form-label">Contact Number:</label>
+      <input id="newCustomerContact" [(ngModel)]="newCustomer.contactNumber" class="form-control">
+    </div>
+    <button (click)="createCustomer()" class="btn btn-primary">Add Customer</button>
+  </div>
+
+  <!-- Customer Table -->
+  <div class="customer-list mt-4">
+    <h2>Customer List</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Address</th>
+          <th>Contact Number</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let customer of customers">
+          <td>{{ customer.name }}</td>
+          <td>{{ customer.address }}</td>
+          <td>{{ customer.contactNumber }}</td>
+          <td>
+            <button (click)="selectCustomer(customer)" class="btn btn-info btn-sm me-2">Edit</button>
+            <button (click)="deleteCustomer(customer.customerID); $event.stopPropagation()" class="btn btn-danger btn-sm">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Edit Customer Details -->
+  <div class="customer-detail mt-4" *ngIf="selectedCustomer">
+    <h2>Edit Customer</h2>
+    <div class="mb-3">
+      <label for="editCustomerName" class="form-label">Name:</label>
+      <input id="editCustomerName" [(ngModel)]="selectedCustomer.name" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label for="editCustomerAddress" class="form-label">Address:</label>
+      <input id="editCustomerAddress" [(ngModel)]="selectedCustomer.address" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label for="editCustomerContact" class="form-label">Contact Number:</label>
+      <input id="editCustomerContact" [(ngModel)]="selectedCustomer.contactNumber" class="form-control">
+    </div>
+    <button (click)="updateCustomer()" class="btn btn-primary">Update</button>
+    <button (click)="clearSelection()" class="btn btn-secondary">Cancel</button>
+  </div>
 </div>

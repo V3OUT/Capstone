@@ -1,45 +1,53 @@
-<div class="container">
-    <h2>Manage Bill of Materials</h2>
-  
-    <form #billForm="ngForm" (ngSubmit)="selectedBill ? updateBill() : createBill()">
-      <div class="form-group">
+<div>
+  <button (click)="toggleForm()">Add New Bill</button>
+
+  <div *ngIf="isFormVisible">
+    <form #billForm="ngForm" (ngSubmit)="isEditing ? updateBill() : createBill(billForm)">
+      <div>
+        <label for="billOfMaterialID">Bill ID:</label>
+        <input type="number" id="billOfMaterialID" name="billOfMaterialID" [(ngModel)]="currentBill.billOfMaterialID" required>
+      </div>
+      <div>
         <label for="serviceRecordID">Service Record ID:</label>
-        <ng-container *ngIf="selectedBill; else newServiceRecordID">
-          <input type="number" id="serviceRecordID" name="serviceRecordID" [(ngModel)]="selectedBill.serviceRecordID" required>
-        </ng-container>
-        <ng-template #newServiceRecordID>
-          <input type="number" id="serviceRecordID" name="serviceRecordID" [(ngModel)]="newBill.serviceRecordID" required>
-        </ng-template>
+        <input type="number" id="serviceRecordID" name="serviceRecordID" [(ngModel)]="currentBill.serviceRecordID" required>
       </div>
-      <div class="form-group">
+      <div>
         <label for="workItemID">Work Item ID:</label>
-        <ng-container *ngIf="selectedBill; else newWorkItemID">
-          <input type="number" id="workItemID" name="workItemID" [(ngModel)]="selectedBill.workItemID" required>
-        </ng-container>
-        <ng-template #newWorkItemID>
-          <input type="number" id="workItemID" name="workItemID" [(ngModel)]="newBill.workItemID" required>
-        </ng-template>
+        <input type="number" id="workItemID" name="workItemID" [(ngModel)]="currentBill.workItemID" required>
       </div>
-      <div class="form-group">
+      <div>
         <label for="quantity">Quantity:</label>
-        <ng-container *ngIf="selectedBill; else newQuantity">
-          <input type="number" id="quantity" name="quantity" [(ngModel)]="selectedBill.quantity" required>
-        </ng-container>
-        <ng-template #newQuantity>
-          <input type="number" id="quantity" name="quantity" [(ngModel)]="newBill.quantity" required>
-        </ng-template>
+        <input type="number" id="quantity" name="quantity" [(ngModel)]="currentBill.quantity" required>
       </div>
-      <button type="submit" class="btn btn-primary">{{ selectedBill ? 'Update' : 'Add' }} Bill</button>
-      <button type="button" (click)="clearSelection()" class="btn btn-secondary">Clear</button>
+      <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+      </div>
+      <button type="submit">{{ isEditing ? 'Update Bill' : 'Create Bill' }}</button>
+      <button type="button" (click)="resetForm()">Cancel</button>
     </form>
-  
-    <h3>Bill of Materials List</h3>
-    <ul class="list-group">
-      <li *ngFor="let bill of bills" class="list-group-item">
-        {{ bill.serviceRecordID }} - {{ bill.workItemID }} - {{ bill.quantity }}
-        <button (click)="selectBill(bill)" class="btn btn-info btn-sm">Edit</button>
-        <button (click)="deleteBill(bill.billOfMaterialID)" class="btn btn-danger btn-sm">Delete</button>
-      </li>
-    </ul>
   </div>
-  
+
+  <table>
+    <thead>
+      <tr>
+        <th>Bill ID</th>
+        <th>Service Record ID</th>
+        <th>Work Item ID</th>
+        <th>Quantity</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let bill of bills">
+        <td>{{ bill.billOfMaterialID }}</td>
+        <td>{{ bill.serviceRecordID }}</td>
+        <td>{{ bill.workItemID }}</td>
+        <td>{{ bill.quantity }}</td>
+        <td>
+          <button (click)="viewBill(bill)">Edit</button>
+          <button (click)="deleteBill(bill.billOfMaterialID)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -15,6 +15,7 @@ export class VehiclesComponent implements OnInit {
   selectedVehicle: Vehicles | null = null;
   customers: Customers[] = [];
   isUpdating: boolean = false;
+  isAddVehicleFormVisible: boolean = false; // Track form visibility
 
   constructor(
     private vehicleServices: VehiclesService,
@@ -52,6 +53,7 @@ export class VehiclesComponent implements OnInit {
       next: (vehicle) => {
         this.vehiclesMap.set(vehicle.modelId, vehicle);
         form.resetForm();
+        this.isAddVehicleFormVisible = false; // Hide form after adding
       },
       error: (error) => {
         console.error('Error adding vehicle:', error);
@@ -75,6 +77,7 @@ export class VehiclesComponent implements OnInit {
           form.resetForm();
           this.selectedVehicle = null;
           this.isUpdating = false;
+          this.isAddVehicleFormVisible = false; // Hide form after updating
         },
         error: (error) => {
           console.error('Error updating vehicle:', error);
@@ -97,10 +100,16 @@ export class VehiclesComponent implements OnInit {
   showDetails(modelId: number): void {
     this.selectedVehicle = this.vehiclesMap.get(modelId) || null;
     this.isUpdating = true;
+    this.isAddVehicleFormVisible = false; // Hide form when viewing details
   }
 
   clearDetails(): void {
     this.selectedVehicle = null;
     this.isUpdating = false;
+  }
+
+  toggleAddVehicleForm(): void {
+    this.isAddVehicleFormVisible = !this.isAddVehicleFormVisible;
+    this.isUpdating = false; // Hide form when toggling visibility
   }
 }

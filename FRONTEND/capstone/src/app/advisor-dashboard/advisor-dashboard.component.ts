@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Customers } from '../Model/customers';
+import { NgModel } from '@angular/forms';
 @Component({
   selector: 'app-advisor-dashboard',
   templateUrl: './advisor-dashboard.component.html',

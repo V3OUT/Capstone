@@ -1,20 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Customers } from '../Model/customers';
-import { NgForm } from '@angular/forms';
-import { Vehicles } from '../Model/vehicles';
 import { CustomersService } from '../services/customers.service';
-import { HttpClient } from '@angular/common/http';
+
 @Component({
   selector: 'app-customers',
   templateUrl: './customers.component.html',
-  styleUrl: './customers.component.css'
+  styleUrls: ['./customers.component.css']
 })
-export class CustomersComponent {
+export class CustomersComponent implements OnInit {
   customers: Customers[] = [];
   selectedCustomer: Customers | null = null;
   newCustomer: Customers = { customerID: 0, name: '', address: '', contactNumber: '' };
+  isAddCustomerFormVisible: boolean = false; // Track form visibility
 
-  constructor(private customersService: CustomersService) { }
+  constructor(private customersService: CustomersService) {}
 
   ngOnInit(): void {
     this.getCustomers();
@@ -32,6 +31,7 @@ export class CustomersComponent {
     this.customersService.createCustomer(this.newCustomer).subscribe(customer => {
       this.customers.push(customer);
       this.newCustomer = { customerID: 0, name: '', address: '', contactNumber: '' };
+      this.isAddCustomerFormVisible = false; // Hide form after adding
     });
   }
 
@@ -52,5 +52,10 @@ export class CustomersComponent {
 
   clearSelection(): void {
     this.selectedCustomer = null;
+  }
+
+  toggleAddCustomerForm(): void {
+    this.isAddCustomerFormVisible = !this.isAddCustomerFormVisible;
+    this.selectedCustomer = null; // Clear selection when toggling visibility
   }
 }

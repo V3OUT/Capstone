@@ -1,75 +1,72 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <style>
-        /* Reset default margins and padding */
-        body, h1, h2, p, ul, li {
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Styling for the navigation bar and its elements */
-        nav {
-            background-color: #f8f8f8;
-            border-bottom: 1px solid #ddd;
-            padding: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .heading h4 {
-            margin: 0;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            margin: 0;
-        }
-
-        .nav-links li {
-            margin-left: 20px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: #333;
-        }
-
-        .nav-links a.active {
-            font-weight: bold;
-        }
-
-        /* Add some padding to the body for better readability */
-        body {
-            padding: 20px;
-            font-family: Arial, sans-serif;
-        }
-
-        /* Heading and subheading styling */
-        h1, h2 {
-            margin: 10px 0;
-        }
-    </style>
-</head>
-<body>
-
-    <nav>
-        <div class="heading">
-            <h4>Vehicle Management System</h4>
+<div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Vehicle Management System</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/landing">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/login">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/signup">Sign up</a>
+            </li>
+          </ul>
         </div>
-        <ul class="nav-links">
-            <li><a routerLink="/landing">Home</a></li>
-            <li><a routerLink="/login">Login</a></li>
-            <li><a routerLink="/signup">Sign up</a></li>
-        </ul>
+      </div>
     </nav>
-
-    <h1>Vehicle Management Services</h1>
-    <h2>Manage all vehicles and services</h2>
-    <a routerLink="/billofmaterials">bill of materials</a>
-    <a routerLink="/invoices">invoices</a>
-    <a routerLink="/workitems">work items</a>
-</body>
-</html>
+  
+    <!-- Background Image -->
+    <div class="bg-image"></div>
+  
+    <!-- Content -->
+    <div class="container mt-5 pt-5">
+      <h1 class="text-center">Vehicle Management Services</h1>
+      <h2 class="text-center">Manage all vehicles and services</h2>
+      <div class="row mt-5">
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Bill of Materials</h5>
+              <p class="card-text">Manage your bill of materials efficiently.</p>
+              <a routerLink="/billofmaterials" class="btn btn-primary">Go to Bill of Materials</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Invoices</h5>
+              <p class="card-text">View and manage your invoices.</p>
+              <a routerLink="/invoices" class="btn btn-primary">Go to Invoices</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Work Items</h5>
+              <p class="card-text">Manage your work items effectively.</p>
+              <a routerLink="/workitems" class="btn btn-primary">Go to Work Items</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Contact Information -->
+    <div class="container mt-5">
+      <footer class="text-center">
+        <p>Contact Information:</p>
+        <p>Email: your-emaile.com</p>
+        <p>Phone: +123 456 7890</p>
+      </footer>
+    </div>
+  </div>
+  

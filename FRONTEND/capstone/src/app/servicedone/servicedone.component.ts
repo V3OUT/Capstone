@@ -1,23 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiceRecords } from '../Model/service-records';
 import { ServiceRecordsService } from '../services/service-records.service';
-import { Vehicles } from '../Model/vehicles';
+import { NgForm } from '@angular/forms';
+
 @Component({
   selector: 'app-servicedone',
   templateUrl: './servicedone.component.html',
-  styleUrl: './servicedone.component.css'
+  styleUrls: ['./servicedone.component.css']
 })
-
 export class ServiceDoneComponent implements OnInit {
+  servicesMap: Map<number, ServiceRecords> = new Map();
   serviceRecords: ServiceRecords[] = [];
   currentRecord: ServiceRecords = {
-    serviceRecordID: 0, // Change to number
-    vehcileID: '',
-    ServiceRepresentativeID: '',
-    serviceDate: '',
-    status: ''
+    serviceRecordID: 0,
+    modelID: 0,
+    ServiceRepresentativeID: 0,
+    serviceDate: new Date(),
+    status: '',
+    vehicleID: 0 // Initialize vehicleID
   };
   isEditing: boolean = false;
+  isFormVisible: boolean = false;
 
   constructor(private serviceRecordsService: ServiceRecordsService) {}
 
@@ -35,16 +38,30 @@ export class ServiceDoneComponent implements OnInit {
   viewRecord(record: ServiceRecords): void {
     this.currentRecord = { ...record };
     this.isEditing = true;
+    this.isFormVisible = true;
   }
 
-  createRecord(): void {
-    this.serviceRecordsService.createService(this.currentRecord).subscribe(
-      (data) => {
-        this.serviceRecords.push(data);
+  addService(form: NgForm): void {
+    const newService: ServiceRecords = {
+      serviceRecordID: this.currentRecord.serviceRecordID,
+      modelID: this.currentRecord.modelID,
+      ServiceRepresentativeID: this.currentRecord.ServiceRepresentativeID,
+      serviceDate: this.currentRecord.serviceDate,
+      status: this.currentRecord.status,
+      vehicleID: this.currentRecord.vehicleID // Ensure vehicleID is included
+    };
+
+    this.serviceRecordsService.createService(newService).subscribe({
+      next: (createdService) => {
+        this.serviceRecords.push(createdService);
         this.resetForm();
+        form.resetForm();
+        this.isFormVisible = false; // Hide form after adding
       },
-      (error) => console.error('Error creating service record:', error)
-    );
+      error: (error) => {
+        console.error('Error adding service record:', error);
+      }
+    });
   }
 
   updateRecord(): void {
@@ -61,7 +78,7 @@ export class ServiceDoneComponent implements OnInit {
     );
   }
 
-  deleteRecord(id: number): void { // Change id to number
+  deleteRecord(id: number): void {
     this.serviceRecordsService.deleteService(id).subscribe(
       () => {
         this.serviceRecords = this.serviceRecords.filter(record => record.serviceRecordID !== id);
@@ -72,12 +89,21 @@ export class ServiceDoneComponent implements OnInit {
 
   resetForm(): void {
     this.currentRecord = {
-      serviceRecordID: 0, // Change to number
-      vehcileID: '',
-      ServiceRepresentativeID: '',
-      serviceDate: '',
-      status: ''
+      serviceRecordID: 0,
+      modelID: 0,
+      ServiceRepresentativeID: 0,
+      serviceDate: new Date(),
+      status: '',
+      vehicleID: 0 // Reset vehicleID
     };
     this.isEditing = false;
+    this.isFormVisible = false;
+  }
+
+  toggleForm(): void {
+    this.isFormVisible = !this.isFormVisible;
+    if (!this.isFormVisible) {
+      this.resetForm();
+    }
   }
 }

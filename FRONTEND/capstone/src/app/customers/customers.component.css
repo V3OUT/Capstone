@@ -1,0 +1,19 @@
+/* Hide element initially */
+.d-none {
+    display: none;
+  }
+  
+  /* Show element with fade-in effect */
+  .fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  

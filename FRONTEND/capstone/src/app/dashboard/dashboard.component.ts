@@ -6,8 +6,12 @@ import { Router } from '@angular/router';
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent {
+  constructor(private router: Router) { } 
+  currentComponent: string = '';
 
-  constructor(private router: Router) {}
+  showComponent(component: string) {
+    this.currentComponent = component;
+  }
   isvehicleComponentVisible = false;
   iscustomercomponentvisible=false;
   toggleComponentvehicle() {
@@ -20,10 +24,8 @@ toggleComponentservice() {
 toggleComponentcustomer() {
   this.iscustomercomponentvisible = !this.iscustomercomponentvisible;
 }
-
-
-navigateToAdvisorDashboard() {
-  this.router.navigate(['/advisordashboard']);
+logout() {
+  localStorage.removeItem('user');
+  this.router.navigate(['/login']);
 }
-
 }

@@ -1,0 +1,37 @@
+.container {
+    margin-top: 20px;
+  }
+  
+  .form-container {
+    margin-bottom: 20px;
+    animation: fadeIn 0.5s ease-in;
+  }
+  
+  .form-container .form {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .table {
+    margin-top: 20px;
+  }
+  
+  .table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f9f9f9;
+  }
+  
+  .btn-info {
+    margin-right: 5px;
+  }
+  
+  .btn-danger {
+    margin-right: 5px;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  

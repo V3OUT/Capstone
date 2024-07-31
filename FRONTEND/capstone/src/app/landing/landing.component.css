@@ -1,61 +1,48 @@
-/* Reset default margins and padding */
-body, h1, h2, p, ul, li {
-    margin: 0;
-    padding: 0;
-}
-
-/* Ensure html and body cover full height */
-html, body {
-    height: 100%;
-}
-
-/* Styling for the navigation bar and its elements */
-nav {
-    background-color: black; /* Navigation bar background color */
-    border-bottom: 1px solid #453f3f;
+/* Navbar */
+.navbar-custom {
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #ddd;
     padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.heading h4 {
-    margin: 0;
-    color: rgb(0, 0, 0); /* Text color in the nav bar */
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    margin: 0;
-}
-
-.nav-links li {
-    margin-left: 20px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: white; /* Text color of links in the nav bar */
-    transition: color 0.3s; /* Smooth color transition on hover */
-}
-
-.nav-links a:hover {
-    color: blue; /* Link color on hover */
-}
-
-/* Add some padding to the body for better readability */
-body {
+    width: 100%;
+  }
+  
+  /* Background Image */
+  .bg-image {
+    background-image: url('car.jpg'); /* Update this with your image path */
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    margin-top: 60px; /* Adjust this if your navbar height changes */
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  h1, h2 {
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  /* Cards */
+  .card {
+    transition: transform 0.2s;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Contact Information */
+  footer {
+    background-color: #f8f8f8;
     padding: 20px;
-    font-family: Arial, sans-serif;
-    background-color: rgb(238, 239, 238); /* Background color for the body */
-    color: pink; /* Default text color */
-    min-height: 100vh; /* Ensure body covers at least viewport height */
-}
-
-/* Heading and subheading styling */
-h1, h2 {
-    margin: 10px 0;
-    color: rgb(5, 5, 5); /* Text color for h1 and h2 */
-    text-align: center; /* Center align h1 and h2 */
-}
+    border-top: 1px solid #ddd;
+  }
+  

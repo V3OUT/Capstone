@@ -1,7 +1,9 @@
 export interface ServiceRecords {
-    serviceRecordID: number; // Change to number
-    vehcileID: string;
-    ServiceRepresentativeID: string;
-    serviceDate: string;
+    serviceRecordID: number;
+    modelID: number;
+    ServiceRepresentativeID: number;
+    serviceDate: Date;
     status: string;
-}
+    vehicleID: number; // Ensure this field exists
+  }
+  

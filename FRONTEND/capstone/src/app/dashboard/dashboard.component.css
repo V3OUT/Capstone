@@ -1,0 +1,59 @@
+/* Navbar */
+.navbar-custom {
+    background-color: #343a40;
+    border-bottom: 2px solid #6c757d;
+  }
+  
+  .navbar-custom .navbar-brand {
+    color: #ffffff;
+  }
+  
+  .navbar-custom .nav-link {
+    color: #ffffff;
+  }
+  
+  .navbar-custom .nav-link:hover {
+    color: #f8f9fa;
+  }
+  
+  .btn-logout {
+    margin-top: 5px;
+    padding: 8px 16px;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+  
+  .btn-logout:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+  }
+  
+  /* Main Content */
+  .container {
+    animation: fadeIn 1s ease-in;
+  }
+  
+  h1, h2 {
+    margin: 10px 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* Tabs */
+  .nav-tabs .nav-link {
+    border-radius: 0;
+    font-weight: 600;
+  }
+  
+  .nav-tabs .nav-link.active {
+    color: #007bff;
+    background-color: #ffffff;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+  }
+  
+  /* Animation */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  

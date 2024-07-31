@@ -13,6 +13,7 @@ import { BillOfMaterialsComponent } from './bill-of-materials/bill-of-materials.
 import { InvoicesComponent } from './invoice/invoice.component';
 import { WorkitemsComponent } from './workitems/workitems.component';
 const routes: Routes = [
+  { path: '', redirectTo: '/landing', pathMatch: 'full' },
   {path:'landing',component:LandingComponent},
   {path:'login',component:LoginComponent},
   {path:'signup',component:SignupComponent},

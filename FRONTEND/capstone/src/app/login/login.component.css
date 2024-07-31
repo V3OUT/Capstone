@@ -1,0 +1,50 @@
+/* Common Styles for Both Pages */
+
+.container {
+    max-width: 600px;
+    margin-top: 50px;
+  }
+  
+  h1, h3 {
+    margin-bottom: 20px;
+  }
+  
+  .login-form, .signup-form {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .signup-form-container {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .btn-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .btn-link:hover {
+    text-decoration: underline;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  

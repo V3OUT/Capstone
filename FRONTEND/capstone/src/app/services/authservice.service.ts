@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import { User } from '../Model/user';
-import { Customers } from '../Model/customers';
+
 @Injectable({
   providedIn: 'root'
 })
 export class AuthserviceService {
+
+  private apiurl='https://localhost:7014/api/Users';
   private allUsers = new Map<string, User>();
   constructor() { }
   SignuptheUser(user: User): boolean {
