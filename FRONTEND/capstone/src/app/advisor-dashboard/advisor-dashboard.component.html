@@ -1,0 +1,34 @@
+<div>
+    <h2>Advisor Dashboard</h2>
+    <div>
+      <label for="service">Select Service:</label>
+      <select id="service" [(ngModel)]="selectedService">
+        <option *ngFor="let service of availableServices" [value]="service">{{service}}</option>
+      </select>
+      <label for="price">Price:</label>
+      <input type="number" id="price" [(ngModel)]="price" min="0">
+      
+      <button (click)="addService()">Add</button>
+    </div>
+    
+    <div>
+      <h3><a>Selected Services</a></h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let service of selectedServices; let i = index">
+            <td>{{service}}</td>
+            <td>{{prices[i]}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Total Price: {{totalPrice}}</p>
+      <button (click)="saveServices()">Save</button>
+    </div>
+  </div>
+  

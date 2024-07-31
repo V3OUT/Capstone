@@ -1,0 +1,45 @@
+<div class="container">
+    <h2>Manage Bill of Materials</h2>
+  
+    <form #billForm="ngForm" (ngSubmit)="selectedBill ? updateBill() : createBill()">
+      <div class="form-group">
+        <label for="serviceRecordID">Service Record ID:</label>
+        <ng-container *ngIf="selectedBill; else newServiceRecordID">
+          <input type="number" id="serviceRecordID" name="serviceRecordID" [(ngModel)]="selectedBill.serviceRecordID" required>
+        </ng-container>
+        <ng-template #newServiceRecordID>
+          <input type="number" id="serviceRecordID" name="serviceRecordID" [(ngModel)]="newBill.serviceRecordID" required>
+        </ng-template>
+      </div>
+      <div class="form-group">
+        <label for="workItemID">Work Item ID:</label>
+        <ng-container *ngIf="selectedBill; else newWorkItemID">
+          <input type="number" id="workItemID" name="workItemID" [(ngModel)]="selectedBill.workItemID" required>
+        </ng-container>
+        <ng-template #newWorkItemID>
+          <input type="number" id="workItemID" name="workItemID" [(ngModel)]="newBill.workItemID" required>
+        </ng-template>
+      </div>
+      <div class="form-group">
+        <label for="quantity">Quantity:</label>
+        <ng-container *ngIf="selectedBill; else newQuantity">
+          <input type="number" id="quantity" name="quantity" [(ngModel)]="selectedBill.quantity" required>
+        </ng-container>
+        <ng-template #newQuantity>
+          <input type="number" id="quantity" name="quantity" [(ngModel)]="newBill.quantity" required>
+        </ng-template>
+      </div>
+      <button type="submit" class="btn btn-primary">{{ selectedBill ? 'Update' : 'Add' }} Bill</button>
+      <button type="button" (click)="clearSelection()" class="btn btn-secondary">Clear</button>
+    </form>
+  
+    <h3>Bill of Materials List</h3>
+    <ul class="list-group">
+      <li *ngFor="let bill of bills" class="list-group-item">
+        {{ bill.serviceRecordID }} - {{ bill.workItemID }} - {{ bill.quantity }}
+        <button (click)="selectBill(bill)" class="btn btn-info btn-sm">Edit</button>
+        <button (click)="deleteBill(bill.billOfMaterialID)" class="btn btn-danger btn-sm">Delete</button>
+      </li>
+    </ul>
+  </div>
+  

@@ -1,0 +1,93 @@
+/* General Styles */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: pink; /* Background color for the body */
+    color: black; /* Default text color */
+    min-height: 100vh; /* Ensure body covers at least viewport height */
+    margin: 0; /* Remove default margin */
+}
+
+/* Heading Styles */
+h1, h3 {
+    color: black; /* Text color for headings */
+    text-align: center; /* Center align headings */
+    margin: 10px 0; /* Space around headings */
+}
+
+/* Create Account Section Styles */
+.create-account-section {
+    text-align: center; /* Center align content */
+    margin-bottom: 20px; /* Add margin for spacing */
+}
+
+.create-account-section p {
+    color: black; /* Color for the "Did not have an account?" text */
+}
+
+.create-account-section button {
+    background-color: white; /* Background color for the button */
+    color: black; /* Text color for the button */
+    border: 1px solid black; /* Border color for the button */
+    padding: 10px 20px; /* Padding for the button */
+    border-radius: 4px; /* Rounded corners for the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size for the button */
+    transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+.create-account-section button:hover {
+    background-color: lightgray; /* Change background color on hover */
+}
+
+/* Form Styles */
+form {
+    background-color: white; /* Background color for the form */
+    padding: 20px;
+    border-radius: 8px; /* Rounded corners for the form */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    max-width: 400px; /* Limit the form width */
+    width: 100%;
+    text-align: center; /* Center align form elements */
+    margin: 20px 0; /* Margin for spacing */
+}
+/* Input Styles */
+input {
+    width: calc(100% - 20px); /* Full-width input with padding adjustment */
+    padding: 10px;
+    margin-bottom: 15px; /* Space between inputs */
+    border: 1px solid #ddd; /* Border color for inputs */
+    border-radius: 4px; /* Rounded corners for inputs */
+    box-sizing: border-box; /* Ensure padding and border are included in width */
+}
+
+input:focus {
+    border-color: black; /* Border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* Button Styles */
+button {
+    background-color: black; /* Background color for the button */
+    color: white; /* Text color for the button */
+    border: none; /* Remove default border */
+    padding: 10px 20px; /* Padding for the button */
+    border-radius: 4px; /* Rounded corners for the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size for the button */
+    transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+button:hover {
+    background-color: gray; /* Change background color on hover */
+}
+
+/* Additional Info Section Styles */
+.additional-info {
+    text-align: center; /* Center align content */
+    margin-top: 20px; /* Add margin for spacing */
+}

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Tech Mahindra\\api\\api.csproj": {}
+    "C:\\Tech Mahindra\\Capstone\\api\\api.csproj": {}
   },
   "projects": {
-    "C:\\Tech Mahindra\\api\\api.csproj": {
+    "C:\\Tech Mahindra\\Capstone\\api\\api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Tech Mahindra\\api\\api.csproj",
+        "projectUniqueName": "C:\\Tech Mahindra\\Capstone\\api\\api.csproj",
         "projectName": "api",
-        "projectPath": "C:\\Tech Mahindra\\api\\api.csproj",
+        "projectPath": "C:\\Tech Mahindra\\Capstone\\api\\api.csproj",
         "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-        "outputPath": "C:\\Tech Mahindra\\api\\obj\\",
+        "outputPath": "C:\\Tech Mahindra\\Capstone\\api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",

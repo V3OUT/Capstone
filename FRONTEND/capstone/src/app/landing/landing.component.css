@@ -1,0 +1,61 @@
+/* Reset default margins and padding */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Ensure html and body cover full height */
+html, body {
+    height: 100%;
+}
+
+/* Styling for the navigation bar and its elements */
+nav {
+    background-color: black; /* Navigation bar background color */
+    border-bottom: 1px solid #453f3f;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.heading h4 {
+    margin: 0;
+    color: rgb(0, 0, 0); /* Text color in the nav bar */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white; /* Text color of links in the nav bar */
+    transition: color 0.3s; /* Smooth color transition on hover */
+}
+
+.nav-links a:hover {
+    color: blue; /* Link color on hover */
+}
+
+/* Add some padding to the body for better readability */
+body {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: rgb(238, 239, 238); /* Background color for the body */
+    color: pink; /* Default text color */
+    min-height: 100vh; /* Ensure body covers at least viewport height */
+}
+
+/* Heading and subheading styling */
+h1, h2 {
+    margin: 10px 0;
+    color: rgb(5, 5, 5); /* Text color for h1 and h2 */
+    text-align: center; /* Center align h1 and h2 */
+}

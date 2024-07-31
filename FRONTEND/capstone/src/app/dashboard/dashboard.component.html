@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <p> all things according to capstone</p>
+        <style>
+            /* Reset default margins and padding */
+            body, h1, h2, p, ul, li {
+                margin: 0;
+                padding: 0;
+            }
+    
+            /* Styling for the navigation bar and its elements */
+            nav {
+                background-color: #f8f8f8;
+                border-bottom: 1px solid #ddd;
+                padding: 10px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+    
+            .heading h4 {
+                margin: 0;
+            }
+    
+            .nav-links {
+                list-style: none;
+                display: flex;
+                margin: 0;
+            }
+    
+            .nav-links li {
+                margin-left: 20px;
+            }
+    
+            .nav-links a {
+                text-decoration: none;
+                color: #333;
+            }
+    
+            .nav-links a.active {
+                font-weight: bold;
+            }
+    
+            /* Add some padding to the body for better readability */
+            body {
+                padding: 20px;
+                font-family: Arial, sans-serif;
+            }
+    
+            /* Heading and subheading styling */
+            h1, h2 {
+                margin: 10px 0;
+            }
+        </style>
+    </head>
+
+    <body>
+        <nav>
+            <div class="heading">
+                <h4>Vehicle Management System</h4>
+            </div>
+            <ul class="nav-links">
+                <li><a routerLink="/landing">Home</a></li>
+                <li><a routerLink="/login">Login</a></li>
+                <li><a routerLink="/signup">Sign up</a></li>
+            </ul>
+        </nav>
+    
+        <h1>Vehicle Management Services</h1>
+        <h2>Manage all vehicles and services</h2>
+    <nav>
+        <ul class="nav-links">
+            <div>
+            <li><a (click)="toggleComponentvehicle()" style="cursor: pointer;" >Manage Vehicles</a></li>
+            <app-vehicles *ngIf="isvehicleComponentVisible"></app-vehicles></div>
+            <div>
+            <li><a (click)="toggleComponentcustomer()" style="cursor: pointer;">Customers </a></li>
+            <app-customers *ngIf="iscustomercomponentvisible"></app-customers>
+            </div>
+            <div>
+                <li><a (click)="toggleComponentservice()" style="cursor: pointer;" >Manage Services</a></li>
+                <app-servicedone *ngIf="isserviceComponentVisible"></app-servicedone></div>
+                <div>
+            <li><a routerLink="">Manage Work Items</a></li>
+            <li><a routerLink="/advisordashboard">Advisor Dashboard</a></li>
+        </div>
+        </ul>
+        </nav>
+    </body>
+</html>
